@@ -7,9 +7,11 @@
             <el-timeline-item :timestamp="blog.createDate" placement="top" v-for="blog in blogs">
             <el-card>
                 <h4>
-                    <router-link :to="{name: 'BlogDetail', param: {blogId:blog.id}}">
-                        {{blog.title}}
+                    <router-link :to="{name: 'BlogDetail', params: {blogId:blog.id}}">
+                        {{blog.title}} 
                     </router-link>
+                    <el-link icon="el-icon-edit" v-if="ownBlog">
+        </el-link>
                 </h4>
                 <p>{{blog.description}}</p>
             </el-card>

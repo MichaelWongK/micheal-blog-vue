@@ -1,6 +1,6 @@
 <template>
   <div>
-      <el-container>
+      <el-container class="m-content">
         <el-header>
             <img class="mlogo" src="http://www.micheal.wang:10010/michealHub.png" alt="">
         </el-header>
@@ -72,6 +72,9 @@ export default {
 </script>
 
 <style scoped>
+ .m-content {
+     text-align: center;
+ }
  .el-header, .el-footer {
     background-color: #B3C0D1;
     color: #333;
@@ -87,10 +90,11 @@ export default {
   }
   
   .el-main {
-    /* background-color: #E9EEF3; */
+    background-color: #E9EEF3;
     color: #333;
     text-align: center;
     line-height: 160px;
+    height: 500px;
   }
   
   body > .el-container {
@@ -98,12 +102,12 @@ export default {
   }
   
   .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
+  .el-container:nth-child(2) .el-aside {
+    line-height: 460px;
   }
   
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
+  .el-container:nth-child(1) .el-aside {
+    line-height: 620px;
   }
 
   .mlogo {
@@ -114,5 +118,6 @@ export default {
   .demo-ruleForm {
       max-width: 500px;
       margin: 0 auto;
+      margin-top: 140px;
   }
 </style>

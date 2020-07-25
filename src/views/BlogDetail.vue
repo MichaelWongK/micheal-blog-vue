@@ -50,7 +50,7 @@ export default {
                var result =  md.render(blog.content)
 
                 _this.blog.content = result
-                _this.ownBlog = (Blob.userId === _this.$store.getters.getUser.id)
+                _this.ownBlog = (blog.userId === _this.$store.getters.getUser.id)
             })
         }
     }

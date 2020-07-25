@@ -10,6 +10,7 @@ import "element-ui/lib/theme-chalk/index.css"
 import 'mavon-editor/dist/css/index.css'
 
 import "./axios"
+import "./permission"
 
 Vue.use(Element)
 Vue.use(mavonEditor)

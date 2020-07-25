@@ -87,7 +87,7 @@ export default {
       }
     },
     created() {
-        const  blogId = this.$route.params.blogId
+        const blogId = this.$route.params.blogId
         console.log(blogId) 
         const _this = this
         if (blogId) {
@@ -99,6 +99,7 @@ export default {
                 _this.ruleForm.content = blog.content
             })
         }
+        
     }
 
 }
