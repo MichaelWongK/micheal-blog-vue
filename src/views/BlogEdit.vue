@@ -17,7 +17,7 @@
             </el-form-item>
 
             <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+                <el-button type="primary" @click="submitForm('ruleForm')">保存</el-button>
                 <el-button @click="resetForm('ruleForm')">重置</el-button>
             </el-form-item>
         </el-form>
@@ -85,7 +85,22 @@ export default {
       resetForm(formName) {
         this.$refs[formName].resetFields();
       }
+    },
+    created() {
+        const  blogId = this.$route.params.blogId
+        console.log(blogId) 
+        const _this = this
+        if (blogId) {
+            this.$axios.get('/blog/' + blogId).then(res => {
+                const blog = res.data.data
+                _this.ruleForm.id = blog.id
+                _this.ruleForm.title = blog.title
+                _this.ruleForm.description = blog.description
+                _this.ruleForm.content = blog.content
+            })
+        }
     }
+
 }
 </script>
 
