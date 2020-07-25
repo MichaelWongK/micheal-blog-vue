@@ -25,7 +25,7 @@ Vue.use(VueRouter)
   },
   {
     path: '/blog/add',
-    name: 'BlogEdit',
+    name: 'BlogAdd',
     component: BlogEdit
   },
   {
