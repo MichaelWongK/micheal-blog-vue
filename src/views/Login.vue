@@ -28,7 +28,7 @@ export default {
       return {
         ruleForm: {
           username: 'micheal.wang',
-          password: 'mingkai13',
+          password: '',
         },
         rules: {
           username: [
