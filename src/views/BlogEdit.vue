@@ -1,7 +1,7 @@
 <template>
   <div>
       <Header></Header>
-
+      <div style="height: 60px"></div>
       <div class="m-content">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
             <el-form-item label="标题" prop="title">
@@ -58,7 +58,6 @@ export default {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            
             const _this = this
             this.$axios.post('/blog/edit', this.ruleForm, {
                 headers: {
@@ -66,7 +65,7 @@ export default {
                 }
             }).then(res => {
                 console.log(res)
-                
+
                 _this.$alert('操作成功', '提示', {
                     confirmButtonText: '确定',
                     callback: action => {
