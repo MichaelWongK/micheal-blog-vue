@@ -4,7 +4,8 @@ import Login from '../components/Login.vue'
 import BlogDetail from '../views/BlogDetail.vue'
 import Blogs from '../views/Blogs.vue'
 import BlogEdit from '../views/BlogEdit.vue'
-
+import Manage from "../views/Manage";
+import Echarts from "../views/Echarts";
 Vue.use(VueRouter)
 
   const routes = [
@@ -43,7 +44,17 @@ Vue.use(VueRouter)
     meta: {
       requireAuth: true
     }
-  }
+  },
+    {
+      path: '/manage',
+      name: 'Manage',
+      component: Manage
+    },
+    {
+      path: '/echarts',
+      name: 'Echarts',
+      component: Echarts
+    },
 
 ]
 

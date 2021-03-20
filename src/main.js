@@ -13,6 +13,8 @@ import "./permission"
 import animated from 'animate.css'
 import loginCheck from './js/loginCheck'
 import vueLive from 'vue-live2d'
+import echarts from 'echarts'
+Vue.use(echarts)
 Vue.use(vueLive)
 //检测是否登录状态。没登陆跳转登录
 Vue.prototype.checkLogin = loginCheck

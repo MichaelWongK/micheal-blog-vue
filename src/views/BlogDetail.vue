@@ -28,7 +28,24 @@
                     <div class="markdown-body" v-html="blog.content"></div>
                 </div>
                 <div class="right-blog">
-
+                    <div class="right-top">
+                        <h3 style="border-bottom: 1px solid hsla(0,0%,58.8%,.2);height: 40px">关于作者</h3>
+                        <div class="author-title">
+                            <el-avatar :size="40"  style="margin-right: 10px"></el-avatar>
+                            <h4>作者姓名</h4>
+                        </div>
+                        <div style="padding-left: 15px">粉丝: <span>数量</span></div>
+                        <div style="padding-left: 15px;margin: 10px 0">关注: <span>数量</span></div>
+                        <div style="padding-left: 15px;cursor:pointer;"> +加关注</div>
+                    </div>
+                    <div class="right-bottom">
+                        <h3 style="border-bottom: 1px solid rgba(150, 150, 150, 0.2);height: 35px">相关推荐</h3>
+                        <div v-for="(item,idx) in list">
+                            <div class="relevant">
+                                {{item.item}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -45,6 +62,23 @@
         components: {Header},
         data() {
             return {
+                //根据分类或者标签来推荐相关文章
+                list:[{
+                    id:1,
+                    item:'啊啊是飞洒发顺丰啊沙发沙发发顺丰'
+                },{
+                    id:2,
+                    item:'的公司公司的VS的我啊沙发沙发请问请问v'
+                },{
+                    id:3,
+                    item:'公司的赶紧弄二号热钱进入你气溶胶哦去微软'
+                },{
+                    id:4,
+                    item:'去我太穷问题及其家族弄起我让你为其全文建瓯菩提评论'
+                },{
+                    id:5,
+                    item:'请问贫穷家庭贫穷没出息佛恩却为了几块钱问题其为人精明'
+                }],
                 blog: {
                     title: "micheal default",
                     content: "default content"
@@ -76,6 +110,15 @@
 </script>
 
 <style scoped>
+    .right-top{
+        background: #fff;
+        padding: 10px;
+    }
+    .right-bottom{
+        padding:10px;
+        margin-top: 30px;
+        background: #ffffff;
+    }
     .line-bottom>span{
         margin-right: 10px;
     }
@@ -87,26 +130,50 @@
         background-image: url("http://www.micheal.wang:10020/mongo/read/6049ba2b29eb83032d5a1682");
         background-position: bottom left;
         background-repeat: repeat-x;
+        height: 50px;
+        margin-bottom: 15px;
     }
 
     .m-blog {
         box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         width: 100%;
         padding-top: 15px;
+        background: #f4f5f5 ;
     }
 
     .blog {
         width: 1200px;
         display: flex;
         margin: 0 auto;
+        padding: 20px 20px 0 0;
     }
 
     .left-blog {
         flex: 4;
         margin-right: 30px;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
     }
 
     .right-blog {
-        flex: 2;
+        flex: 1.2;
+    }
+    .markdown-body{
+        margin-top: 20px;
+    }
+    .author-title{
+        padding: 10px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+    }
+    .relevant{
+        height: 50px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .relevant:hover{
+       color: #007fff;
     }
 </style>

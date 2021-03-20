@@ -59,7 +59,9 @@
                             </div>
                         </div>
                         <div class="class-sort">
-                            <div style="color: #aaa"><i class="el-icon-price-tag" style="transform: rotate(45deg)"></i>标签
+                            <div style="color: #aaa" @click="manage()">
+
+                                <i class="el-icon-price-tag" style="transform: rotate(45deg)"></i>标签
                             </div>
                             <div class="sort-lable">
                                 <div class="lable" v-for="item in lable"
@@ -178,6 +180,9 @@
             window.addEventListener("scroll", this.scrolling(this.handle, 1000), true)
         },
         methods: {
+            manage(){
+                this.$router.push('/manage')
+            },
             handle() {
                 if (this.$refs.box.scrollTop < 60) {
                     this.isScroll = false
@@ -201,6 +206,7 @@
             goRelease() {
                 console.log(this.$children[0].login)
                 console.log(this.$emit.login)
+                debugger
                 // this.$children[0].login = true
                 this.checkLogin.checkLogin(this)
                 // this.$router.push("/blog/add")
